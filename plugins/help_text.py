@@ -34,10 +34,10 @@ def help_user(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                  InlineKeyboardButton(text="👤 Soporte 👤", url="https://t.me/RennyV95"), 
                   InlineKeyboardButton(text="🌎 PʟᴀɴᴇᴛᴀMᴏᴠɪᴇs 🌎", url="https://t.me/PlanetaMovies")
                 ],
                 [
+                  InlineKeyboardButton(text="👤 Soporte 👤", url="https://t.me/DKzippO"),
                   InlineKeyboardButton(text="Gracias a Cursos Pro Android", url="https://t.me/joinchat/VDY6seEnkeKdZNRM")
                 ]
             ]
@@ -57,10 +57,10 @@ def send_start(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                  InlineKeyboardButton(text="👤 Soporte 👤", url="https://t.me/RennyV95"), 
                   InlineKeyboardButton(text="🌎 PʟᴀɴᴇᴛᴀMᴏᴠɪᴇs 🌎", url="https://t.me/PlanetaMovies")
                 ],
                 [
+                  InlineKeyboardButton(text="👤 Soporte 👤", url="https://t.me/DKzippO"),
                   InlineKeyboardButton(text="Gracias a Cursos Pro Android", url="https://t.me/joinchat/VDY6seEnkeKdZNRM")
                 ]
             ]
@@ -98,7 +98,7 @@ async def rename_cb(bot, update):
             [
                 [
                     InlineKeyboardButton(text="✏️ RENOMBRAR ✏️", callback_data="rename_button"),
-                    InlineKeyboardButton(text="✖️ CANCELAR ✖️", callback_data="cancel_e")
+                    InlineKeyboardButton(text="✖️ CANCELAR ✖️", callback_data="cancelar")
                 ]
             ]
         ),
