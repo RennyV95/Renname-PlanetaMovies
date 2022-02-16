@@ -23,7 +23,7 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        progress = "{0}{1} \n\n<b>📊Porcentaje:</b> {2}%\n".format(
+        progress = "{0}{1} \n\n<b>📊 Porcentaje:</b> {2}%\n".format(
             ''.join(["🟩" for i in range(math.floor(percentage / 10))]),
             ''.join(["🟨" for i in range(10 - math.floor(percentage / 10))]),
             round(percentage, 2))
@@ -64,8 +64,8 @@ def TimeFormatter(milliseconds: int) -> str:
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = ((str(days) + "d, ") if days else "") + \
-        ((str(hours) + "h, ") if hours else "") + \
-        ((str(minutes) + "m, ") if minutes else "") + \
-        ((str(seconds) + "s, ") if seconds else "") + \
-        ((str(milliseconds) + "ms, ") if milliseconds else "")
+          ((str(hours) + "h, ") if hours else "") + \
+          ((str(minutes) + "m, ") if minutes else "") + \
+          ((str(seconds) + "s, ") if seconds else "") + \
+          ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
