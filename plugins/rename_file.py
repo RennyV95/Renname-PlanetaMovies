@@ -109,6 +109,7 @@ async def rename_doc(bot, message):
                 await sendmsg.delete()
                 sendmsg = await message.reply_text(script.SAVED_RECVD_DOC_FILE, quote=True)
 
+            name_file_new = file_name + "." + extension
             new_file_name = download_location + file_name + "." + extension
             os.rename(the_real_download_location, new_file_name)
             try:
@@ -148,7 +149,7 @@ async def rename_doc(bot, message):
                 chat_id=message.chat.id,
                 document=new_file_name,
                 thumb=thumb_image_path,
-                caption=description,
+                caption=name_file_new.description,
                 reply_to_message_id=message.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
