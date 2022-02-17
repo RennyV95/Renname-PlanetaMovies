@@ -80,7 +80,7 @@ async def rename_doc(bot, message):
 		file_name = message.text
 		description = script.CUSTOM_CAPTION_UL_FILE
 		download_location = Config.DOWNLOAD_LOCATION + "/"
-		caption_text = await get_caption(message.from_user.id)
+		caption_text = await get_caption(message.reply_to_message.from_user.id)
 		try:
 			filename = caption_text.caption.format(newname = file_name)
 		except:
