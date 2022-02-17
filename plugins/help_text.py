@@ -116,11 +116,20 @@ async def rename_cb(bot, update):
 	except:
 		filename = "No disponible"
 
+	await bot.send_message(
+		chat_id=update.chat.id,
 		text="<b>✏️ Nombre del archivo</b> : <code>{}</code>".format(filename),
-
+		reply_markup=InlineKeyboardMarkup(
+			[
+				[
+					InlineKeyboardButton(text="🌎 PʟᴀɴᴇᴛᴀMᴏᴠɪᴇs 🌎", url="https://t.me/PlanetaMovies")
+				]
+			]
+		),
 		parse_mode="html",
 		reply_to_message_id=update.message_id,
 		disable_web_page_preview=True
+	)
 
 async def cancel_extract(bot, update):
 	
