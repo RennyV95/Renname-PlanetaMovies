@@ -84,7 +84,7 @@ async def rename_doc(bot, message):
 		try:
 			filename = caption_text.caption.format(newname = file_name)
 		except:
-			filename =f"<code>{file_name}</code>\n\n<a href="https://t.me/PlanetaMovies">🌎 <b>PʟᴀɴᴇᴛᴀMᴏᴠɪᴇs</b> 🌎</a>"
+			filename =f"<code>{file_name}</code>\n\n<a href='https://t.me/PlanetaMovies'>🌎 <b>PʟᴀɴᴇᴛᴀMᴏᴠɪᴇs</b> 🌎</a>"
 		pass 
 		sendmsg = await bot.send_message(
 			chat_id=message.chat.id,
