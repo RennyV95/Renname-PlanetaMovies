@@ -78,14 +78,19 @@ async def rename_doc(bot, message):
     
     if message.from_user.id not in Config.BANNED_USERS:
         file_name = message.text
-        description = script.CUSTOM_CAPTION_UL_FILE.format(newname=file_name)
-        download_location = Config.DOWNLOAD_LOCATION + "/"
-
-        sendmsg = await bot.send_message(
-            chat_id=message.chat.id,
-            text=script.DOWNLOAD_START,
-            reply_to_message_id=message.message_id
-        )
+        description = script.CUSTOM_CAPTION_UL_FILE
+          download_location = Config.DOWNLOAD_LOCATION + "/"
+          caption_text = await get_caption(message.from_user.id)
+          try:
+              caption_text2 = caption_text.caption.format(newname = file_name)
+          except:
+              caption_text2 =f"<code>{file_name}</code>"
+              pass 
+          a = await bot.send_message(
+          chat_id=message.chat.id,
+          text=script.DOWNLOAD_START,
+          reply_to_message_id=message.message_id
+          )
         
         c_time = time.time()
         the_real_download_location = await bot.download_media(
